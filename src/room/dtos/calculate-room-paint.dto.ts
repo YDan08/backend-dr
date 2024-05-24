@@ -3,17 +3,21 @@ import { Field, InputType } from "type-graphql"
 
 @InputType()
 export class WallDto {
-	@IsNumber()
 	@Field(() => Number)
-	meters: number
+	@IsNumber()
+	height: number
 
 	@IsNumber()
 	@Field(() => Number)
-	quantityDoors: number
+	length: number
 
 	@IsNumber()
-	@Field(() => Number)
-	quantityWindows: number
+	@Field(() => Number, { nullable: true })
+	quantityDoors?: number
+
+	@IsNumber()
+	@Field(() => Number, { nullable: true })
+	quantityWindows?: number
 }
 
 @InputType()
