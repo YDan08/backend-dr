@@ -1,1 +1,1 @@
-export * from "./room.resolver"
+export * from './room.resolver'

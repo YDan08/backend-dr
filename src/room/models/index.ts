@@ -1,1 +1,1 @@
-export * from "./ink.model"
+export * from './ink.model'

@@ -1,1 +1,1 @@
-export * from "./calculate-room-paint.dto"
+export * from './calculate-room-paint.dto'
