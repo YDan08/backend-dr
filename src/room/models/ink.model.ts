@@ -10,4 +10,6 @@ export class InkModel {
 	ink2: number
 	@Field(() => Number)
 	ink05: number
+	@Field(() => Number)
+	totalInk: number
 }

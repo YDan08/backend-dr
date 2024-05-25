@@ -19,7 +19,9 @@ export class RoomResolver {
 
 		const totalMeterRoom = data.walls.reduce((total, currWall) => {
 			const totalWallMeter = currWall.height * currWall.length
-
+			if (totalWallMeter > 50) {
+				throw new Error("A parede não pode ser maior que 50 metros quadrados!")
+			}
 			const totalDoor = door * (currWall.quantityDoors ?? 0)
 			const totalWindow = window * (currWall?.quantityWindows ?? 0)
 			if (currWall.quantityDoors && currWall.height < 2.2) {
@@ -54,6 +56,7 @@ export class RoomResolver {
 				ink3: ink3,
 				ink2: ink2,
 				ink05: ink05,
+				totalInk: roundDecimalPlaces(totalMeterRoom / 5),
 			}
 		}
 
@@ -62,6 +65,7 @@ export class RoomResolver {
 			ink3: ink3,
 			ink2: ink2,
 			ink05: ink05,
+			totalInk: roundDecimalPlaces(totalMeterRoom / 5),
 		}
 	}
 }
