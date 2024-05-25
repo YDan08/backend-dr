@@ -11,7 +11,7 @@ export class RoomResolver {
 	}
 
 	@Mutation(() => InkModel)
-	async CalculateRoomPaint(
+	async calculateRoomPaint(
 		@Arg("data", () => CalculateRoomPaintDto) data: CalculateRoomPaintDto
 	) {
 		const door = 0.8 * 1.9
