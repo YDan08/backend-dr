@@ -6,7 +6,8 @@ import { RoomResolver } from './room'
 
 const bootstrap = async () => {
   const schema = await buildSchema({
-    resolvers: [RoomResolver]
+    resolvers: [RoomResolver],
+    validate: true
   })
 
   const server = new ApolloServer({
